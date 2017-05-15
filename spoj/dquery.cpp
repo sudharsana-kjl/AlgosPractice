@@ -3,8 +3,8 @@ using namespace std;
 
 struct query
 {
-	long int r,l,ans;
-}qa[100];
+	long r,l,ans;
+}qa[30000];
 
 vector<int> a;
 vector<int> answer;
@@ -40,7 +40,7 @@ void remove(int pos)
 int main()
 { 
 	
-	int i,n,t,q;
+	long int i,n,t,q;
 	cin>>n;
 	answ=0;	
 	while(n--&&(cin>>t))
@@ -48,7 +48,7 @@ int main()
 //	cout<<"enter q";
 	cin>>q;// Read the number of queries
 	for(i=0;i<q;i++)
-   	{	int ll,rr;
+   	{	long ll,rr;
  		cin>>ll>>rr;
 		qa[i].l = ll-1;
 		qa[i].r = rr - 1;// read all queries
@@ -61,7 +61,7 @@ int main()
 	rootn=pow(a.size(),0.5);// find the number of blocks
 //	cout<<"rootn is"<<rootn;
 	sort(qa,qa+q,block);// now sort based on which block they belong and  resolve all conflicts by considering index r for each query 
-	int currentL=0,currentR=0;
+	long currentL=0,currentR=0;
   //	cout<<"after sorting";
 //	for(i=0;i<q;i++)
 //		cout<<qa[i].l<<" "<<qa[i].r<<" "<<qa[i].ans<<"\n";	
@@ -81,8 +81,8 @@ int main()
 
       		answer[qa[i].ans]=answ;
   	}
-	for(int i=0;i<q;i++)
-		cout<<answer[i];
+	for(long i=0;i<q;i++)
+		cout<<answer[i]<<endl;
 	return 0;
 }
 
